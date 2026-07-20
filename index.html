@@ -1,208 +1,345 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<!-- Original base template: Hyperspace by HTML5 UP, licensed under CC BY 3.0. This site has been fully redesigned for Shiv Patel. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shiv Patel | Software Engineer &amp; Data Science Student</title>
+    <meta name="description" content="Portfolio of Shiv Patel, a Rutgers Computer Science and Data Science student building full-stack applications, machine-learning systems, and AI-powered products.">
+    <meta name="theme-color" content="#050816">
+    <meta property="og:title" content="Shiv Patel | Software Engineer &amp; Data Science Student">
+    <meta property="og:description" content="Portfolio of Shiv Patel, a Rutgers Computer Science and Data Science student building full-stack applications, machine-learning systems, and AI-powered products.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/img/og-card.svg">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="Shiv Patel home">
+          <span class="brand-mark" aria-hidden="true">SP</span>
+          <span>Shiv Patel</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-menu" id="primary-menu" data-menu>
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#education">Education</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          <a class="button button-small" data-link="resume" href="assets/Shiv-Patel-Resume.pdf">Resume</a>
+        </div>
+      </nav>
+    </header>
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who I am</a></li>
-							<!--<li><a href="#two">What I've done</a></li>-->
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+    <main id="main">
+      <section class="hero section" id="home" data-section>
+        <div class="content-grid hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Computer Science + Data Science</p>
+            <h1>I build intelligent software that turns data into decisions.</h1>
+            <p class="hero-subtitle">I'm Shiv Patel, a Rutgers University student building full-stack applications, machine-learning systems, and reliable user-facing AI products.</p>
+            <div class="status-pill">
+              <span class="status-dot" aria-hidden="true"></span>
+              Open to software engineering, data science, and AI opportunities
+            </div>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button button-primary" href="#projects">View My Work</a>
+              <a class="button" data-link="resume" href="assets/Shiv-Patel-Resume.pdf">View Resume</a>
+            </div>
+            <div class="social-links" aria-label="Social links">
+              <a data-link="github" href="https://example.com/TODO-github" aria-label="GitHub profile">GitHub</a>
+              <a data-link="linkedin" href="https://example.com/TODO-linkedin" aria-label="LinkedIn profile">LinkedIn</a>
+              <a href="mailto:shivpatel0516@gmail.com" aria-label="Email Shiv Patel">Email</a>
+            </div>
+          </div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+          <div class="hero-visual reveal" data-tilt aria-label="Abstract software dashboard preview">
+            <div class="energy-wave" aria-hidden="true"></div>
+            <div class="dashboard-panel main-panel">
+              <div class="panel-topbar">
+                <span></span>
+                <span></span>
+                <span></span>
+                <strong>decision-engine.py</strong>
+              </div>
+              <div class="code-window" aria-hidden="true">
+                <p><span>model</span> = Pipeline([features, xgb])</p>
+                <p><span>split</span> = TemporalSplit(seed=2027)</p>
+                <p><span>auc</span> = 0.9038 +/- 0.0052</p>
+              </div>
+              <div class="metric-row">
+                <div>
+                  <span>Signal</span>
+                  <strong>87%</strong>
+                </div>
+                <div>
+                  <span>Latency</span>
+                  <strong>42ms</strong>
+                </div>
+              </div>
+              <div class="chart-lines" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+            <div class="floating-card card-fullstack">Full-Stack</div>
+            <div class="floating-card card-ml">Machine Learning</div>
+            <div class="floating-card card-ai">AI Systems</div>
+            <div class="floating-card card-data">Data</div>
+            <div class="badge-cloud" aria-label="Technology badges">
+              <span>Python</span>
+              <span>Java</span>
+              <span>React</span>
+              <span>Spring Boot</span>
+              <span>XGBoost</span>
+              <span>REST APIs</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Shiv Patel </h1> 
-							<p>Passionate about devloping efficient and impactful digital solutions </a><br /> 
-								"Turning ideas into reality through coding and design"</a><br /></a><br />
-							<ul class="actions">
-								<li><a href="https://yellow-cordula-5.tiiny.site" class="button">Resume</a></li>
-							</ul>
-						</div>
-					</section>
+      <section class="section" id="about" data-section>
+        <div class="content-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">About Me</p>
+            <h2>Practical software, clear systems, useful intelligence.</h2>
+          </div>
+          <div class="about-layout">
+            <p class="about-copy reveal">I am pursuing a B.S. in Computer Science and Data Science at Rutgers University-New Brunswick with a minor in Quantitative Economics. I enjoy building software across the full stack and using data and machine learning to solve practical problems. My recent work includes predictive modeling, employee-benefits software, AI-powered media processing, and user-facing AI applications.</p>
+            <div class="value-grid">
+              <article class="glass-card reveal">
+                <span class="card-icon" aria-hidden="true">01</span>
+                <h3>Engineering</h3>
+                <p>Building maintainable full-stack applications and clearly structured APIs.</p>
+              </article>
+              <article class="glass-card reveal">
+                <span class="card-icon" aria-hidden="true">02</span>
+                <h3>Machine Learning</h3>
+                <p>Creating leak-free prediction pipelines, evaluating robustness, and interpreting model behavior.</p>
+              </article>
+              <article class="glass-card reveal">
+                <span class="card-icon" aria-hidden="true">03</span>
+                <h3>Problem Solving</h3>
+                <p>Navigating unfamiliar codebases, debugging deployment issues, and delivering complete working products.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Education</h2>
-									<p>I am currently a Computer Science and Data Science student at Rutgers University New-Brunswick</p>
-									<ul class="actions">
-										<li><a href="education.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>What have I done</h2>
-									<p>A small dive into some of the experiences I've had.</p>
-									<ul class="actions">
-										<li><a href="done.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>What I plan to do</h2>
-									<p>This will talk a little bit about the what my goals for the future are</p>
-									<ul class="actions">
-										<li><a href="done.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+      <section class="section" id="experience" data-section>
+        <div class="content-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Experience</p>
+            <h2>Building through real product constraints.</h2>
+          </div>
+          <article class="experience-card reveal">
+            <div class="timeline-line" aria-hidden="true"></div>
+            <div>
+              <p class="role-label">Software Engineering Fellow</p>
+              <h3>HeadStarter AI</h3>
+              <p class="meta">Remote | July 2024 - September 2024</p>
+            </div>
+            <div class="experience-content">
+              <p>At HeadStarter AI, I worked across product, API integration, and full-stack implementation while exploring what makes AI applications reliable and understandable for users.</p>
+              <ul>
+                <li>Integrated OpenAI's API into a conversational AI app and studied how design choices affect reliability and trust.</li>
+                <li>Built a React, Node.js, and Firebase task tracker with authentication and real-time data synchronization.</li>
+                <li>Translated user feedback into navigation and usability improvements.</li>
+                <li>Independently built TripWhiz, an AI-powered travel-planning platform, with API integration and user-facing product design.</li>
+              </ul>
+              <div class="tag-row" aria-label="Technologies used at HeadStarter AI">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Firebase</span>
+                <span>OpenAI API</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
 
-				<!-- Two -->
-					<!--<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+      <section class="section" id="projects" data-section>
+        <div class="content-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Selected Projects</p>
+            <h2>Systems that connect data, interfaces, and deployment.</h2>
+          </div>
+          <div class="projects-grid">
+            <article class="project-card project-featured reveal">
+              <div class="project-visual f1-visual" aria-label="F1 prediction analytics dashboard graphic">
+                <div class="race-track" aria-hidden="true"></div>
+                <div class="probability">Podium probability <strong>82%</strong></div>
+                <div class="mini-metrics"><span>AUC 0.9038</span><span>SHAP ranked</span></div>
+              </div>
+              <div class="project-body">
+                <h3>F1 Race Outcome Prediction</h3>
+                <p>A machine-learning pipeline designed to predict Formula 1 race outcomes while analyzing model robustness and explainability.</p>
+                <ul>
+                  <li>Processed 26,760 historical race entries.</li>
+                  <li>Combined K-Means clustering with XGBoost, Random Forest, and Logistic Regression.</li>
+                  <li>Used strict temporal splits, SHAP analysis, and ablation testing to reduce leakage risk.</li>
+                  <li>Reached 5-fold cross-validation AUC of 0.9038 +/- 0.0052.</li>
+                </ul>
+                <div class="tag-row"><span>Python</span><span>XGBoost</span><span>K-Means</span><span>SHAP</span><span>Pandas</span><span>scikit-learn</span></div>
+                <div class="project-actions">
+                  <a class="button button-small" data-project-link="f1-github" href="https://example.com/TODO-f1-github">GitHub</a>
+                </div>
+              </div>
+            </article>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>If you have any questions or concerns please contact via the information below</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Location</h3>
-											<span>Jersey City, New Jersey<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">shivpatel0516@gmail.com</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(201) 830-7619</span>
-										</li>
-										<li>
-											<!--<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul> -->
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
+            <article class="project-card reveal">
+              <div class="project-visual benefits-visual" aria-label="Benefits enrollment dashboard graphic">
+                <div class="plan-card"></div>
+                <div class="plan-card active"></div>
+                <div class="bar-chart" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              </div>
+              <div class="project-body">
+                <h3>BenefitSync</h3>
+                <p>A full-stack employee-benefits enrollment platform for selecting coverage, calculating costs, and analyzing enrollment data.</p>
+                <ul>
+                  <li>Built a React frontend and Java Spring Boot REST API.</li>
+                  <li>Implemented plan selection, cost calculations, coverage management, and admin analytics.</li>
+                  <li>Added backend unit and integration tests around core workflows.</li>
+                </ul>
+                <div class="tag-row"><span>Java</span><span>Spring Boot</span><span>React</span><span>REST APIs</span><span>CSS</span></div>
+                <div class="project-actions">
+                  <a class="button button-small" data-project-link="benefitsync-github" href="https://example.com/TODO-benefitsync-github">GitHub</a>
+                </div>
+              </div>
+            </article>
 
-			</div>
+            <article class="project-card reveal">
+              <div class="project-visual phoenix-visual" aria-label="Video processing pipeline graphic">
+                <span>Source</span>
+                <span>Detect</span>
+                <span>Reframe</span>
+                <span>Export</span>
+              </div>
+              <div class="project-body">
+                <h3>Dark Phoenix</h3>
+                <p>A deployed AI-powered media-processing platform that converts long-form video into short social-media clips.</p>
+                <ul>
+                  <li>Configured and deployed an existing production codebase.</li>
+                  <li>Modified FFmpeg workflows and added branding and watermark integrations.</li>
+                  <li>Debugged media-generation and deployment issues for repeatable outputs.</li>
+                </ul>
+                <div class="tag-row"><span>Python</span><span>FFmpeg</span><span>REST APIs</span><span>Git</span><span>CI/CD</span></div>
+                <div class="project-actions">
+                  <a class="button button-small" data-project-link="dark-phoenix-github" href="https://example.com/TODO-dark-phoenix-github">GitHub</a>
+                </div>
+              </div>
+            </article>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+            <article class="project-card reveal">
+              <div class="project-visual babel-visual" aria-label="Build test deploy terminal graphic">
+                <code>$ build --verify</code>
+                <code>[ok] configure</code>
+                <code>[ok] test</code>
+                <code>[ok] deploy</code>
+              </div>
+              <div class="project-body">
+                <h3>Babel</h3>
+                <p>A complete application configured, debugged, and deployed through a modern source-control workflow.</p>
+                <ul>
+                  <li>Built and configured the application from the ground up.</li>
+                  <li>Resolved environment and dependency issues.</li>
+                  <li>Managed GitHub-based version control and deployment.</li>
+                </ul>
+                <div class="tag-row"><span>JavaScript</span><span>Git</span><span>GitHub</span><span>Deployment</span><span>Debugging</span></div>
+                <div class="project-actions">
+                  <a class="button button-small" data-project-link="babel-github" href="https://example.com/TODO-babel-github">GitHub</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <section class="section" id="skills" data-section>
+        <div class="content-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Technical Toolkit</p>
+            <h2>Tools I use to move from idea to shipped product.</h2>
+          </div>
+          <div class="skills-grid">
+            <article class="skill-card reveal"><h3>Languages</h3><div class="tag-row"><span>Java</span><span>Python</span><span>C</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div></article>
+            <article class="skill-card reveal"><h3>Frontend</h3><div class="tag-row"><span>React</span><span>Responsive Web Design</span></div></article>
+            <article class="skill-card reveal"><h3>Backend and APIs</h3><div class="tag-row"><span>Node.js</span><span>Spring Boot</span><span>Flask</span><span>REST APIs</span><span>Firebase</span></div></article>
+            <article class="skill-card reveal"><h3>Machine Learning and Data</h3><div class="tag-row"><span>Pandas</span><span>XGBoost</span><span>scikit-learn</span><span>K-Means</span><span>SHAP</span></div></article>
+            <article class="skill-card reveal"><h3>Tools and Platforms</h3><div class="tag-row"><span>Git</span><span>GitHub</span><span>FFmpeg</span><span>CI/CD</span><span>Google Cloud / Maps API</span></div></article>
+          </div>
+        </div>
+      </section>
 
-	</body>
+      <section class="section" id="education" data-section>
+        <div class="content-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Education</p>
+            <h2>Computer science, data science, and quantitative thinking.</h2>
+          </div>
+          <article class="education-card reveal">
+            <div class="rutgers-mark" aria-hidden="true">R</div>
+            <div>
+              <h3>Rutgers University-New Brunswick</h3>
+              <p class="meta">B.S. in Computer Science &amp; Data Science | Minor in Quantitative Economics</p>
+              <p>Expected graduation: May 2027</p>
+              <p>Certification: Google AI Professional Certificate</p>
+            </div>
+            <div class="coursework">
+              <h4>Relevant coursework</h4>
+              <div class="tag-row">
+                <span>Data Structures &amp; Algorithms</span>
+                <span>Algorithms</span>
+                <span>Computer Architecture</span>
+                <span>Computer Design</span>
+                <span>Discrete Structures I &amp; II</span>
+                <span>Intro to Data Science</span>
+                <span>Data 101</span>
+                <span>Data Management for Data Science</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" data-section>
+        <div class="content-grid contact-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>Let's Build Something Useful</h2>
+            <p>I'm interested in opportunities involving software engineering, data science, machine learning, and user-facing AI systems.</p>
+          </div>
+          <div class="contact-panel reveal">
+            <a class="button button-primary" href="mailto:shivpatel0516@gmail.com">Email Me</a>
+            <div class="contact-links">
+              <a href="mailto:shivpatel0516@gmail.com">shivpatel0516@gmail.com</a>
+              <span>Jersey City, New Jersey</span>
+              <a data-link="github" href="https://example.com/TODO-github">GitHub</a>
+              <a data-link="linkedin" href="https://example.com/TODO-linkedin">LinkedIn</a>
+              <a data-link="resume" href="assets/Shiv-Patel-Resume.pdf">Download/View Resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year>2026</span> Shiv Patel. Built with HTML, CSS, and JavaScript.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

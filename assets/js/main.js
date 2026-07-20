@@ -1,190 +1,161 @@
-/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+const SITE_LINKS = {
+  // TODO: Replace these with Shiv Patel's verified public profile URLs.
+  github: "https://example.com/TODO-github",
+  linkedin: "https://example.com/TODO-linkedin",
+  resume: "assets/Shiv-Patel-Resume.pdf",
+};
 
-(function($) {
+const PROJECT_LINKS = {
+  // TODO: Replace each GitHub URL with the matching verified repository.
+  "f1-github": "https://example.com/TODO-f1-github",
+  "benefitsync-github": "https://example.com/TODO-benefitsync-github",
+  "dark-phoenix-github": "https://example.com/TODO-dark-phoenix-github",
+  "babel-github": "https://example.com/TODO-babel-github",
+};
 
-	var	$window = $(window),
-		$body = $('body'),
-		$sidebar = $('#sidebar');
+document.body.classList.add("js");
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
+const header = document.querySelector("[data-header]");
+const menu = document.querySelector("[data-menu]");
+const toggle = document.querySelector(".nav-toggle");
+const navLinks = [...document.querySelectorAll(".nav-link")];
+const sections = [...document.querySelectorAll("[data-section]")];
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let updateMenuAccessibility = () => {};
 
-	// Hack: Enable IE flexbox workarounds.
-		if (browser.name == 'ie')
-			$body.addClass('is-ie');
+document.querySelectorAll("[data-year]").forEach((node) => {
+  node.textContent = new Date().getFullYear();
+});
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+document.querySelectorAll("[data-link]").forEach((link) => {
+  const key = link.dataset.link;
+  if (SITE_LINKS[key]) {
+    link.href = SITE_LINKS[key];
+  }
+});
 
-	// Forms.
+document.querySelectorAll("[data-project-link]").forEach((link) => {
+  const key = link.dataset.projectLink;
+  if (PROJECT_LINKS[key]) {
+    link.href = PROJECT_LINKS[key];
+  }
+});
 
-		// Hack: Activate non-input submits.
-			$('form').on('click', '.submit', function(event) {
+const closeMenu = () => {
+  if (!menu || !toggle) return;
+  menu.classList.remove("is-open");
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-label", "Open navigation menu");
+  updateMenuAccessibility();
+};
 
-				// Stop propagation, default.
-					event.stopPropagation();
-					event.preventDefault();
+if (toggle && menu) {
+  const menuItems = [...menu.querySelectorAll("a")];
+  updateMenuAccessibility = () => {
+    const isDesktop = window.matchMedia("(min-width: 1041px)").matches;
+    const isOpen = menu.classList.contains("is-open");
+    menuItems.forEach((item) => {
+      if (isDesktop || isOpen) {
+        item.removeAttribute("tabindex");
+      } else {
+        item.setAttribute("tabindex", "-1");
+      }
+    });
+  };
 
-				// Submit form.
-					$(this).parents('form').submit();
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    menu.classList.toggle("is-open", !isOpen);
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+    updateMenuAccessibility();
+  });
 
-			});
+  menu.addEventListener("click", (event) => {
+    if (event.target instanceof HTMLAnchorElement) {
+      closeMenu();
+    }
+  });
 
-	// Sidebar.
-		if ($sidebar.length > 0) {
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      toggle.focus();
+    }
+  });
 
-			var $sidebar_a = $sidebar.find('a');
+  window.addEventListener("resize", updateMenuAccessibility);
+  updateMenuAccessibility();
+}
 
-			$sidebar_a
-				.addClass('scrolly')
-				.on('click', function() {
+const updateHeader = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 12);
+};
 
-					var $this = $(this);
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
 
-					// External link? Bail.
-						if ($this.attr('href').charAt(0) != '#')
-							return;
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14 }
+  );
 
-					// Deactivate all links.
-						$sidebar_a.removeClass('active');
+  document.querySelectorAll(".reveal").forEach((node) => revealObserver.observe(node));
 
-					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-						$this
-							.addClass('active')
-							.addClass('active-locked');
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-				})
-				.each(function() {
+      if (!visible) return;
+      navLinks.forEach((link) => {
+        link.classList.toggle("is-active", link.getAttribute("href") === `#${visible.target.id}`);
+      });
+    },
+    {
+      rootMargin: "-30% 0px -55% 0px",
+      threshold: [0.08, 0.2, 0.45, 0.7],
+    }
+  );
 
-					var	$this = $(this),
-						id = $this.attr('href'),
-						$section = $(id);
+  sections.forEach((section) => sectionObserver.observe(section));
+} else {
+  document.querySelectorAll(".reveal").forEach((node) => node.classList.add("is-visible"));
+}
 
-					// No section for this link? Bail.
-						if ($section.length < 1)
-							return;
+if (!reduceMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  const tilt = document.querySelector("[data-tilt]");
 
-					// Scrollex.
-						$section.scrollex({
-							mode: 'middle',
-							top: '-20vh',
-							bottom: '-20vh',
-							initialize: function() {
+  tilt?.addEventListener("pointermove", (event) => {
+    const rect = tilt.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    tilt.style.transform = `translate3d(${x * 8}px, ${y * 8}px, 0)`;
+  });
 
-								// Deactivate section.
-									$section.addClass('inactive');
+  tilt?.addEventListener("pointerleave", () => {
+    tilt.style.transform = "";
+  });
+}
 
-							},
-							enter: function() {
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+    if (!targetId || targetId === "#") return;
+    const target = document.querySelector(targetId);
+    if (!target) return;
 
-								// Activate section.
-									$section.removeClass('inactive');
-
-								// No locked links? Deactivate all links and activate this section's one.
-									if ($sidebar_a.filter('.active-locked').length == 0) {
-
-										$sidebar_a.removeClass('active');
-										$this.addClass('active');
-
-									}
-
-								// Otherwise, if this section's link is the one that's locked, unlock it.
-									else if ($this.hasClass('active-locked'))
-										$this.removeClass('active-locked');
-
-							}
-						});
-
-				});
-
-		}
-
-	// Scrolly.
-		$('.scrolly').scrolly({
-			speed: 1000,
-			offset: function() {
-
-				// If <=large, >small, and sidebar is present, use its height as the offset.
-					if (breakpoints.active('<=large')
-					&&	!breakpoints.active('<=small')
-					&&	$sidebar.length > 0)
-						return $sidebar.height();
-
-				return 0;
-
-			}
-		});
-
-	// Spotlights.
-		$('.spotlights > section')
-			.scrollex({
-				mode: 'middle',
-				top: '-10vh',
-				bottom: '-10vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			})
-			.each(function() {
-
-				var	$this = $(this),
-					$image = $this.find('.image'),
-					$img = $image.find('img'),
-					x;
-
-				// Assign image.
-					$image.css('background-image', 'url(' + $img.attr('src') + ')');
-
-				// Set background position.
-					if (x = $img.data('position'))
-						$image.css('background-position', x);
-
-				// Hide <img>.
-					$img.hide();
-
-			});
-
-	// Features.
-		$('.features')
-			.scrollex({
-				mode: 'middle',
-				top: '-20vh',
-				bottom: '-20vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			});
-
-})(jQuery);
+    event.preventDefault();
+    target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    history.pushState(null, "", targetId);
+  });
+});

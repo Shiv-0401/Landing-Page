@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Shiv Patel portfolio preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#040713"/>
+      <stop offset="0.55" stop-color="#071225"/>
+      <stop offset="1" stop-color="#0b0620"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="35%" r="50%">
+      <stop stop-color="#38bdf8" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <path d="M0 440C230 320 388 520 620 350s340-80 580-210" fill="none" stroke="#a855f7" stroke-width="8" opacity="0.55"/>
+  <path d="M0 470C250 345 405 545 650 380s340-88 550-180" fill="none" stroke="#38bdf8" stroke-width="5" opacity="0.72"/>
+  <g opacity="0.12" stroke="#9bdcff">
+    <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200"/>
+    <path d="M120 0v630M240 0v630M360 0v630M480 0v630M600 0v630M720 0v630M840 0v630M960 0v630M1080 0v630"/>
+  </g>
+  <text x="86" y="250" fill="#f4f8ff" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="800">Shiv Patel</text>
+  <text x="90" y="326" fill="#a9bbd8" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600">Software Engineer &amp; Data Science Student</text>
+  <text x="90" y="390" fill="#38bdf8" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">Full-stack apps | ML systems | AI products</text>
+</svg>
